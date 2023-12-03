@@ -19,11 +19,11 @@ const handleLogin=async (req, res) => {
 
     if (!user) return res.redirect("/signup")
 
-    const sessionId = uuidv4();
+    // const sessionId = uuidv4();
 
-    setUser(sessionId, user);
+    const token=setUser(user);
 
-    res.cookie("uid", sessionId);
+    res.cookie("uuid", token);
 
     return res.redirect("/");
 }

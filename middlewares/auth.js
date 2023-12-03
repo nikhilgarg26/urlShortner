@@ -1,7 +1,7 @@
 const { getUser } = require("../service/auth")
 
 async function checkAuth(req, res, next) {
-    const userUid = req.cookies?.uid;
+    const userUid = req.cookies?.uuid;
 
     const user = getUser(userUid);
 
